@@ -16,6 +16,7 @@ import io.reactivex.disposables.Disposable;
 
 /**
  * Created by amitshekhar on 28/08/16.
+ * merge和concat类似，也是用来连接两个被订阅者，但是它不保证两个被订阅发射数据的顺序。
  */
 public class MergeExampleActivity extends AppCompatActivity {
 

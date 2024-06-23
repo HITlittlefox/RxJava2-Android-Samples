@@ -18,6 +18,7 @@ import io.reactivex.schedulers.Schedulers;
 
 /**
  * Created by amitshekhar on 27/08/16.
+ * take(n)操作，仅发射前n个数据。
  */
 public class TakeExampleActivity extends AppCompatActivity {
 
@@ -30,6 +31,7 @@ public class TakeExampleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_example);
         btn = findViewById(R.id.btn);
+        btn.setText("TakeExampleActivity take(3)");
         textView = findViewById(R.id.textView);
 
         btn.setOnClickListener(new View.OnClickListener() {

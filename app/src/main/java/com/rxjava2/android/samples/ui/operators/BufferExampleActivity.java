@@ -18,6 +18,7 @@ import io.reactivex.disposables.Disposable;
 
 /**
  * Created by amitshekhar on 27/08/16.
+ * buffer(a, b)，a表示数组的最大长度，b表示步长。
  */
 public class BufferExampleActivity extends AppCompatActivity {
 
@@ -30,6 +31,7 @@ public class BufferExampleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_example);
         btn = findViewById(R.id.btn);
+        btn.setText(this.getClass().getSimpleName());
         textView = findViewById(R.id.textView);
 
         btn.setOnClickListener(new View.OnClickListener() {

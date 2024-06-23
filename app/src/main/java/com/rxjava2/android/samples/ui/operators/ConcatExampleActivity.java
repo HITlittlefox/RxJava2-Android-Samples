@@ -16,6 +16,7 @@ import io.reactivex.disposables.Disposable;
 
 /**
  * Created by amitshekhar on 27/08/16.
+ * Observable.concat(Observable a, Observable b)，连接两个被订阅者，订阅者将会按照a->b的顺序收到两个被订阅者所发射的消息。
  */
 public class ConcatExampleActivity extends AppCompatActivity {
 
@@ -28,6 +29,7 @@ public class ConcatExampleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_example);
         btn = findViewById(R.id.btn);
+        btn.setText(this.getClass().getSimpleName());
         textView = findViewById(R.id.textView);
 
         btn.setOnClickListener(new View.OnClickListener() {

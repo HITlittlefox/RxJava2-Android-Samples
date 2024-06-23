@@ -17,6 +17,7 @@ import io.reactivex.subjects.PublishSubject;
 
 /**
  * Created by amitshekhar on 27/08/16.
+ * relay(n)，使得即使在未订阅时，被订阅者已经发射了数据，订阅者也可以收到被订阅者在订阅之前最多n个数据。
  */
 public class ReplayExampleActivity extends AppCompatActivity {
 
@@ -29,6 +30,7 @@ public class ReplayExampleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_example);
         btn = findViewById(R.id.btn);
+        btn.setText(this.getClass().getSimpleName());
         textView = findViewById(R.id.textView);
 
         btn.setOnClickListener(new View.OnClickListener() {
@@ -58,6 +60,7 @@ public class ReplayExampleActivity extends AppCompatActivity {
 
         /*
          * it will emit 2, 3, 4 as (count = 3), retains the 3 values for replay
+         * 暂存 n 个数 for replay
          */
         connectableObservable.subscribe(getSecondObserver());
 

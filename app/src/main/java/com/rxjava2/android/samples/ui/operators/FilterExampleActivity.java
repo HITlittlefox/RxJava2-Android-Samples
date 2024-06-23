@@ -18,6 +18,7 @@ import io.reactivex.functions.Predicate;
 
 /**
  * Created by amitshekhar on 27/08/16.
+ * filter操作符需要传入一个条件函数，仅当发射的数据满足该条件时，订阅者才会收到数据。
  */
 public class FilterExampleActivity extends AppCompatActivity {
 
@@ -30,6 +31,7 @@ public class FilterExampleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_example);
         btn = findViewById(R.id.btn);
+        btn.setText(this.getClass().getSimpleName());
         textView = findViewById(R.id.textView);
 
         btn.setOnClickListener(new View.OnClickListener() {

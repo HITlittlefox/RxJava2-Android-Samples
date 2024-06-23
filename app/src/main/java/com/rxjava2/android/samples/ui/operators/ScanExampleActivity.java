@@ -28,6 +28,7 @@ public class ScanExampleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_example);
         btn = findViewById(R.id.btn);
+        btn.setText(this.getClass().getSimpleName());
         textView = findViewById(R.id.textView);
 
         btn.setOnClickListener(new View.OnClickListener() {

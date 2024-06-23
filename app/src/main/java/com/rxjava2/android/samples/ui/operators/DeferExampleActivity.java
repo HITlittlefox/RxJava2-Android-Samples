@@ -17,6 +17,7 @@ import io.reactivex.disposables.Disposable;
 
 /**
  * Created by amitshekhar on 30/08/16.
+ * 使用defer可以延迟被订阅者的生成，也就是使得被订阅者是在订阅发生时才生成。
  */
 public class DeferExampleActivity extends AppCompatActivity {
 
@@ -29,6 +30,7 @@ public class DeferExampleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_example);
         btn = findViewById(R.id.btn);
+        btn.setText(this.getClass().getSimpleName());
         textView = findViewById(R.id.textView);
 
         btn.setOnClickListener(new View.OnClickListener() {

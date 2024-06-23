@@ -61,6 +61,9 @@ public class PaginationActivity extends AppCompatActivity {
         compositeDisposable.clear();
     }
 
+
+    // Then set up the loadMoreListener on the RecyclerView and subscribe for the data.
+
     /**
      * setting listener to get callback for load more
      */
@@ -104,6 +107,7 @@ public class PaginationActivity extends AppCompatActivity {
                         .onErrorReturn(throwable -> new ArrayList<>()))
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(items -> {
+                    // 拼接数据
                     paginationAdapter.addItems(items);
                     paginationAdapter.notifyDataSetChanged();
                     loading = false;

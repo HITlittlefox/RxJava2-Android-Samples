@@ -44,11 +44,12 @@ public class FlowableExampleActivity extends AppCompatActivity {
      */
     private void doSomeWork() {
 
-        Flowable<Integer> observable = Flowable.just(1, 2, 3, 4);
+        Flowable<Integer> observable = Flowable.just(1, 2, 3, 4, 25);
 
         observable.reduce(50, new BiFunction<Integer, Integer, Integer>() {
             @Override
             public Integer apply(Integer t1, Integer t2) {
+                // add every element that was emitted
                 return t1 + t2;
             }
         }).subscribe(getObserver());

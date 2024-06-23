@@ -18,6 +18,7 @@ import io.reactivex.schedulers.Schedulers;
 
 /**
  * Created by amitshekhar on 27/08/16.
+ * skip(n)操作符，会跳过前n个结果。
  */
 public class SkipExampleActivity extends AppCompatActivity {
 
@@ -30,6 +31,7 @@ public class SkipExampleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_example);
         btn = findViewById(R.id.btn);
+        btn.setText(this.getClass().getSimpleName());
         textView = findViewById(R.id.textView);
 
         btn.setOnClickListener(new View.OnClickListener() {

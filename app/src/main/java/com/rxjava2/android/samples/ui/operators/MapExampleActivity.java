@@ -26,6 +26,8 @@ import io.reactivex.schedulers.Schedulers;
 
 /**
  * Created by amitshekhar on 27/08/16.
+ * map操作符可以将一个类型的被订阅者的数据传给接收另一个类型的订阅者，即Obervable<T>发射的数据可以传给Obersever<U>，在转换的中间，我们需要自己定义转换的规则，
+ * 即map(new Function<T, U>())
  */
 public class MapExampleActivity extends AppCompatActivity {
 

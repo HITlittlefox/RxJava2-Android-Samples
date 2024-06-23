@@ -24,6 +24,7 @@ import io.reactivex.schedulers.Schedulers;
 
 /**
  * Created by thanhtuan on 26/04/18.
+ * switchMap 和其他扁平化操作符的主要区别在于取消效果。 在每次发射时，先前的内部 observable（您提供的函数的结果）被取消并订阅新的 observable。 您可以通过短语 switch to a new observable 记住这一点。
  */
 public class SwitchMapExampleActivity extends AppCompatActivity {
 

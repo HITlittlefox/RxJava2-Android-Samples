@@ -27,6 +27,8 @@ public class DisposableExampleActivity extends AppCompatActivity {
 
     private static final String TAG = DisposableExampleActivity.class.getSimpleName();
     Button btn;
+    Button btnSecond;
+    Button btnThird;
     TextView textView;
     private final CompositeDisposable disposables = new CompositeDisposable();
 
@@ -35,12 +37,29 @@ public class DisposableExampleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_example);
         btn = findViewById(R.id.btn);
+        btnSecond = findViewById(R.id.btn_second);
+        btnThird = findViewById(R.id.btn_third);
         textView = findViewById(R.id.textView);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 doSomeWork();
+            }
+        });
+        btnSecond.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                disposables.clear(); // do not send event after activity has been destroyed
+            }
+        });
+
+        btnThird.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, String.valueOf(disposables.isDisposed()));
+                disposables.dispose(); // When we use the dispose() method, it will clear all the disposables and set isDisposed = true, so it will not accept any new disposable.
+                Log.d(TAG, String.valueOf(disposables.isDisposed()));
             }
         });
     }
@@ -86,6 +105,8 @@ public class DisposableExampleActivity extends AppCompatActivity {
     }
 
     static Observable<String> sampleObservable() {
+        // 正常情况是先产生数据，再注册，再消费。
+        // 而使用了defer之后，是先注册，再生产数据，再消费。
         return Observable.defer(new Callable<ObservableSource<? extends String>>() {
             @Override
             public ObservableSource<? extends String> call() {

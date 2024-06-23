@@ -20,6 +20,7 @@ import io.reactivex.schedulers.Schedulers;
 
 /**
  * Created by amitshekhar on 27/08/16.
+ * interval和timer类似，也是Observable的静态创建方法，它和timer的区别是：它并不是在计时结束后就发射唯一的事件，而是每隔一段时间，就发射一次事件，并且Observer会收到递增的值。
  */
 public class IntervalExampleActivity extends AppCompatActivity {
 

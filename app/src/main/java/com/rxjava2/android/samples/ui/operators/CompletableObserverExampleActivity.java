@@ -20,6 +20,7 @@ import io.reactivex.schedulers.Schedulers;
 
 /**
  * Created by amitshekhar on 27/08/16.
+ * CompletableObserver也是属于Observer的一种，它只有onComplete回调，而没有类似与onNext之间的参数回调。
  */
 public class CompletableObserverExampleActivity extends AppCompatActivity {
 
@@ -32,6 +33,7 @@ public class CompletableObserverExampleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_example);
         btn = findViewById(R.id.btn);
+        btn.setText(this.getClass().getSimpleName());
         textView = findViewById(R.id.textView);
 
         btn.setOnClickListener(new View.OnClickListener() {

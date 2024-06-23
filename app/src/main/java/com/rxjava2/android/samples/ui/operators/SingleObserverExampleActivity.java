@@ -16,6 +16,7 @@ import io.reactivex.disposables.Disposable;
 
 /**
  * Created by amitshekhar on 27/08/16.
+ * SingleObserver属于Observer的一种，它和普通Observer的不同，在于其回调方法，它没有onNext(T t)方法，而是只有onSuccess(T t)方法。
  */
 public class SingleObserverExampleActivity extends AppCompatActivity {
 

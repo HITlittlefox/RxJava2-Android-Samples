@@ -17,6 +17,7 @@ import io.reactivex.functions.BiFunction;
 
 /**
  * Created by amitshekhar on 27/08/16.
+ * reduce是把发射序列内值进行两两比较，直到比较出最值，如果序列的长度小于2，那么不会被回调。
  */
 public class ReduceExampleActivity extends AppCompatActivity {
 
@@ -29,6 +30,7 @@ public class ReduceExampleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_example);
         btn = findViewById(R.id.btn);
+        btn.setText(this.getClass().getSimpleName());
         textView = findViewById(R.id.textView);
 
         btn.setOnClickListener(new View.OnClickListener() {
@@ -45,6 +47,11 @@ public class ReduceExampleActivity extends AppCompatActivity {
     private void doSomeWork() {
         getObservable()
                 .reduce(new BiFunction<Integer, Integer, Integer>() {
+                    /**
+                     * @param t1 the first value
+                     * @param t2 the second value
+                     * @return 相加
+                     */
                     @Override
                     public Integer apply(Integer t1, Integer t2) {
                         return t1 + t2;

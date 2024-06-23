@@ -16,6 +16,7 @@ import io.reactivex.subjects.PublishSubject;
 
 /**
  * Created by amitshekhar on 17/12/16.
+ * 如果使用了PublishSubject，那么对于订阅者来说，它们只会收到被订阅者在订阅之后发射的序列。
  */
 
 public class PublishSubjectExampleActivity extends AppCompatActivity {

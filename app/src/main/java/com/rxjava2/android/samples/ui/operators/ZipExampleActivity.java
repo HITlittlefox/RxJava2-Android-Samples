@@ -25,6 +25,7 @@ import io.reactivex.schedulers.Schedulers;
 
 /**
  * Created by amitshekhar on 27/08/16.
+ * zip是Observable的静态方法，我们通过它传入n个可以是不同类型的订阅者，以及一个声明将这n个被订阅者组合成一个新的被订阅者的函数，这个函数的返回值要和订阅者的类型的Observer<T>的T一致。
  */
 public class ZipExampleActivity extends AppCompatActivity {
 
@@ -106,6 +107,10 @@ public class ZipExampleActivity extends AppCompatActivity {
                 textView.append(AppConstant.LINE_SEPARATOR);
                 for (User user : userList) {
                     textView.append(" firstname : " + user.firstname);
+                    textView.append(AppConstant.LINE_SEPARATOR);
+                    textView.append(" lastname : " + user.lastname);
+                    textView.append(AppConstant.LINE_SEPARATOR);
+                    textView.append(" id : " + user.id);
                     textView.append(AppConstant.LINE_SEPARATOR);
                 }
                 Log.d(TAG, " onNext : " + userList.size());
