@@ -48,4 +48,8 @@
     <string name="switch_map">Switch Map</string>
     <string name="take_while">Take While</string>
     <string name="take_until">Take Until</string>
+
+    <string name="long_press_toast">long press toast</string>
+    <string name="long_press_toast_and_up">long press and up toast</string>
+
 </resources>

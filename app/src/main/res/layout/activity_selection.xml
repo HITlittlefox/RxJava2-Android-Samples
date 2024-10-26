@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+<ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fadeScrollbars="false"
@@ -12,7 +18,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <Button
@@ -64,5 +70,33 @@
             android:text="@string/search"
             android:textColor="@android:color/black" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="点我出现ViewStub" />
+
+            <ViewStub
+                android:id="@+id/view_stub"
+                android:gravity="bottom"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inflatedId="@+id/view_stub"
+                android:layout="@layout/viewstub_view" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_test_long_press"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="btn_test_long_press" />
+
     </LinearLayout>
 </ScrollView>
+</layout>
